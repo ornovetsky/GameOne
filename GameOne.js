@@ -7,7 +7,7 @@ let count2 = 0
 span1.innerHTML = count1
 span2.innerHTML = count2
 
-const h3 = document.getElementsByTagName("h3");
+const h3 = document.getElementsByTagName("h3")[0];
 
 const Player1 = document.getElementById("Player1");
 document.getElementById('Player1').addEventListener('click', p1 );
@@ -67,7 +67,7 @@ if (!endGame){
 } if (count1 === maxScore) {
 span1.classList.add("win");
 endGame = true;
-// h3.innerHTML = PlayerOneName.value + "has won!"
+h3.innerHTML = PlayerOneName.value + " has won!"
 // h3.classList.add("hidden")
 }
 span1.innerHTML = count1
