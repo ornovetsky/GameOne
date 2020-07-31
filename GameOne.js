@@ -52,12 +52,12 @@ gameDiv.classList.remove("hidden")
 // }
 
 let maxScore = 5;
-PlayingTo.innerHTML = maxScore
+PlayingTo.innerHTML = "Playing to:   " + maxScore
 let endGame = false;
 
 function playingTo(){
   maxScore = Number(GameVal.value)
-  PlayingTo.innerHTML = maxScore
+  PlayingTo.innerHTML = "Playing to: " + maxScore
 
   }
 
@@ -67,8 +67,11 @@ if (!endGame){
 } if (count1 === maxScore) {
 span1.classList.add("win");
 endGame = true;
-h3.innerHTML = PlayerOneName.value + " has won!"
-// h3.classList.add("hidden")
+if(PlayerOneName.value != ""){
+PlayingTo.innerHTML = PlayerOneName.value + " has won!"}
+else {
+  PlayingTo.innerHTML = "Player One has won!"
+}
 }
 span1.innerHTML = count1
 }
@@ -79,20 +82,23 @@ function p2() {
   } if (maxScore === count2) {
     span2.style.color = "green"
     endGame = true;
+    if(PlayerTwoName.value != ""){
+      PlayingTo.innerHTML = PlayerTwoName.value + " has won!"}
+      else {
+            PlayingTo.innerHTML = "Player Two has won!"
+      }
   }
   span2.innerHTML = count2
   }
 
+
+  /* 1.select hidden div with class hidden
+     2. classList.add gameMenu
+     3. classList.remove hidden
+  */
+
   function reset(){
-    span1.innerHTML = 0
-    span2.innerHTML = 0
-    span1.style.color = "white"
-    span2.style.color = "white"
-    count1 = 0
-    count2 = 0
-    PlayingTo.innerHTML = maxScore
-    GameVal.textContent = 0
-    endGame = false;
+    location.reload()
   }
 
   
